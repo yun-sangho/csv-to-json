@@ -29,7 +29,7 @@ export function createPropertyHeaderMap(
   return Object.keys(colMetaData).reduce((map, prop) => {
     const m = colMetaData[prop];
 
-    if (m.index) {
+    if (m.index !== undefined) {
       map.set(prop, {
         colIndex: m.index,
         valueFormatter: m.valueFormatter,
