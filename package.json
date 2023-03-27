@@ -1,8 +1,16 @@
 {
-  "name": "node-typescript-boilerplate",
-  "version": "0.0.0",
-  "description": "Minimalistic boilerplate to quick-start Node.js development in TypeScript.",
-  "type": "module",
+  "name": "csv-to-json-transformer",
+  "version": "0.0.1",
+  "sideEffects": false,
+  "main": "./cjs/index.js",
+  "module": "./esm5/index.js",
+  "es2015": "./esm2015/index.js",
+  "typings": "./types/index.d.ts",
+  "description": "csv to json using class",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yun-sangho/csv-to-json"
+  },
   "engines": {
     "node": ">= 18.12 <19"
   },
@@ -27,16 +35,19 @@
     "start": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts",
     "clean": "rimraf coverage build tmp",
     "prebuild": "npm run lint",
-    "build": "tsc -p tsconfig.json",
-    "build:watch": "tsc -w -p tsconfig.json",
-    "build:release": "npm run clean && tsc -p tsconfig.release.json",
+    "build": "npm run build:cjs",
+    "build:clean": "rimraf build",
+    "build:es2015": "tsc --project tsconfig.release.esm2015.json",
+    "build:esm5": "tsc --project tsconfig.release.esm5.json",
+    "build:cjs": "tsc --project tsconfig.release.cjs.json",
+    "build:types": "tsc --project tsconfig.release.types.json",
     "lint": "eslint . --ext .ts --ext .mts",
     "test": "nodemon --exec 'ts-node' __tests__/index.ts",
     "prettier": "prettier --config .prettierrc --write .",
     "test:watch": "jest --watch"
   },
-  "author": "Jakub Synowiec <jsynowiec@users.noreply.github.com>",
-  "license": "Apache-2.0",
+  "author": "yun-sangho",
+  "license": "MIT",
   "dependencies": {
     "tslib": "~2.4"
   },

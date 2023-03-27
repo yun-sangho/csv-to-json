@@ -1,5 +1,5 @@
-import { ColumnMetadata } from '../type.js';
-import { Schema } from '../Schema.js';
+import { ColumnMetadata } from '../type';
+import { Schema } from '../Schema';
 
 const CSVColumnSymbol = Symbol('CSVColumn');
 

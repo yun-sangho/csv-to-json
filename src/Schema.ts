@@ -1,4 +1,4 @@
-import { ColumnMetadata } from './type.js';
+import { ColumnMetadata } from './type';
 
 export class Schema {}
 

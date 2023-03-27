@@ -1,10 +1,10 @@
 import 'reflect-metadata';
 import { createReadStream } from 'fs';
 
-import { Column, getCSVColumnMetadataInSchema } from './decorators/index.js';
-import { createPropertyHeaderMap, Schema, validateHeader } from './Schema.js';
-import { CsvParser } from './CsvParser.js';
-import { ClassConstructor, CSV } from './type.js';
+import { Column, getCSVColumnMetadataInSchema } from './decorators';
+import { createPropertyHeaderMap, Schema, validateHeader } from './Schema';
+import { CsvParser } from './CsvParser';
+import { ClassConstructor, CSV } from './type';
 
 const DEFAULT_COLUMN_DELIMITER = ',';
 
