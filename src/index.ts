@@ -8,10 +8,10 @@ import { ClassConstructor, CSV } from './type';
 
 const DEFAULT_COLUMN_DELIMITER = ',';
 
-class CsvToJSON {
+class CsvToJSON<T extends ClassConstructor<Schema>> {
   private _delimiter = DEFAULT_COLUMN_DELIMITER;
   private _encoding: BufferEncoding = 'utf-8';
-  private _schema: ClassConstructor<Schema> | null;
+  private _schema: T | null;
 
   public delimiter(delimiter: string) {
     this._delimiter = delimiter;
@@ -23,7 +23,7 @@ class CsvToJSON {
     return this;
   }
 
-  public schema(schema: ClassConstructor<Schema>) {
+  public schema(schema: T) {
     this._schema = schema;
     return this;
   }

@@ -29,6 +29,5 @@ const json = await new CsvToJSON()
     .delimiter(',')
     .encoding('utf-8')
     .schema(Test)
-    .convert('path_to_csv') as Test[];
-
+    .convert('path_to_csv');
 ```
