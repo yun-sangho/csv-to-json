@@ -41,7 +41,7 @@
     "build:cjs": "tsc --project tsconfig.release.cjs.json",
     "build:types": "tsc --project tsconfig.release.types.json",
     "lint": "eslint . --ext .ts --ext .mts",
-    "test": "nodemon --exec 'ts-node' __tests__/index.ts",
+    "test": "jest",
     "prettier": "prettier --config .prettierrc --write .",
     "test:watch": "jest --watch"
   },
